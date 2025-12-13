@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eliza Gotuje 🍳</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #ffd6e8);
+      color: #222;
+      text-align: center;
+    }
+    header {
+      padding: 30px 20px;
+    }
+    h1 { font-size: 2.5rem; }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      background: #ff69b4;
+      color: white;
+      font-weight: bold;
+    }
+
+    button:hover { opacity: 0.8; }
+
+    .card {
+      background: white;
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+      display: none;
+    }
+
+    .active { display: block; }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍓 Eliza Gotuje 🍓</h1>
+    <p>Kuchnia chaosu pod patronatem Hatsune Miku 👑</p>
+
+    <nav>
+      <button onclick="showTab('muzynek')">🍫 Muzynek Miku</button>
+      <button onclick="showTab('brownie')">🍰 Rosołek pyszny jak milosc miku</button>
+    </nav>
+  </header>
+
+  <div id="muzynek" class="card active">
+    <h2>🍫 Ciasto Muzynek z miłością Miku</h2>
+    <p>Legenda mówi, że Miku śpiewała, jak to piekliśmy.</p>
+    <ul>
+      <li>cala kostka masla</li>
+      <li>Kakałko</li>
+      <li>niecala szklanka mąki</li>
+      <li>3 jajka</li>
+      <li>szklanka cukru</li>
+      <li>dodatki</li>
+      <li>Miłość do Miku 💙</li>
+    </ul>
+  </div>
+
+  <div id="brownie" class="card">
+    <h2>Rosołek pyszny jak hatsune miku</h2>
+    <p>kurka od somsiada (wcale nie kradziona)</p>
+    <p>2 BIGASS FATASS marcheweczki</p>
+    <p>1 korzen pietruszki</p>
+    <p>1 średnia cebulka</p>
+    <p>pół pora</p>
+    <p>1/4 duzego korzenia selera</p>
+    <p>2L wody</p>
+    <p>garść natki pietruszki lub/oraz swiezy lubczyk</p>
+    <p>2 listki laurowe, 3 ziarna ziela angielskiego, luzeczka ziaren pieprzu, 2 łyzeczki soli</p>    
+  </div>
+
+  <footer>
+    © 2025 elizagotuje.github.io | Królowa Miku rządzi 👑
+  </footer>
+
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
