@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eliza Gotuje 🍳</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#62cff4, #ffb6c1, #2c67f2);
+      color: #222;
+      text-align: center;
+    }
+    header {
+      padding: 30px 20px;
+    }
+    h1 { font-size: 2.5rem; }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      background: #ff69b4;
+      color: white;
+      font-weight: bold;
+    }
+
+    button:hover { opacity: 0.8; }
+
+    .card {
+      background: none;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+      display: none;
+      text-align: left;
+    }
+
+    .card.active { display: block; }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍓 Lizzy Gotuje 🍓</h1>
+    <p>Kuchnia chaosu pod patronatem Hatsune Miku i SKZ 👑</p>
+
+    <nav>
+      <button onclick="showTab('muzynek')">🍫 Muzynek Miku</button>
+      <button onclick="showTab('rosol')">🍰 Rosołek pyszny jak miłość Miku</button>
+      <button onclick="showTab('chlebek-bananowy')">🍌 Chlebek bananowy</button>
+    </nav>
+  </header>
+
+  <div id="muzynek" class="card active">
+    <h2>🍫 Ciasto Muzynek z miłością Miku</h2>
+    <p>Legenda mówi, że Miku śpiewała, jak to piekliśmy.</p>
+    <ul>
+      <li>cała kostka masła</li>
+      <li>Kakao</li>
+      <li>niecała szklanka mąki</li>
+      <li>3 jajka</li>
+      <li>szklanka cukru</li>
+      <li>dodatki</li>
+      <li>Miłość do Miku 💙</li>
+    </ul>
+  </div>
+
+  <div id="rosol" class="card">
+    <h2>Rosołek pyszny jak Hatsune Miku</h2>
+    <p>Składniki:</p>
+    <ul>
+      <li>1 kurka (np. od sąsiada — żart)</li>
+      <li>2 marchewki</li>
+      <li>1 korzeń pietruszki</li>
+      <li>1 średnia cebulka</li>
+      <li>pół pora</li>
+      <li>1/4 dużego korzenia selera</li>
+      <li>2 L wody</li>
+      <li>garść natki pietruszki i/lub świeży lubczyk</li>
+      <li>2 liście laurowe, 3 ziarna ziela angielskiego, kilka ziaren pieprzu, 2 łyżeczki soli</li>
+    </ul>
+    <p>Przygotowanie: Włóż warzywa i kurę do garnka, zalej wodą, doprowadź do wrzenia i gotuj na małym ogniu 1–1,5 godziny. Na koniec dopraw i dodaj natkę.</p>
+  </div>
+
+  <div id="chlebek-bananowy" class="card">
+    <h2>Chlebek bananowy rodem minionków</h2>
+    <p>Minionki weszły mi do kuchni i pokazały mi ten przepis.</p>
+    <h3>Składniki</h3>
+    <ul>
+      <li>6 dojrzałych bananów (można dodać jeszcze 4 do smaku)</li>
+      <li>ok. 150 g masła (pół kostki)</li>
+      <li>2 duże jajka</li>
+      <li>2 szklanki mąki</li>
+      <li>1 szklanka cukru</li>
+      <li>ok. 1/2 szklanki mleka (niecałe)</li>
+      <li>1 paczka cukru wanilinowego</li>
+      <li>2 paczki proszku do pieczenia</li>
+    </ul>
+    <h3>Przygotowanie</h3>
+    <ol>
+      <li>Zblenduj lub rozgnieć banany.</li>
+      <li>Roztop masło i dodaj je do bananów.</li>
+      <li>W osobnej misce ubij jajka z cukrem, a następnie połącz z masą bananowo-maślankową.</li>
+      <li>Dodaj suche składniki (mąka, proszek do pieczenia, cukier wanilinowy) i wymieszaj rózgą. W razie potrzeby dodaj mleko, żeby uzyskać odpowiednią konsystencję.</li>
+      <li>Przelej do formy i piecz w piekarniku nagrzanym do 175°C (termoobieg) przez około 45 minut — sprawdź patyczkiem.</li>
+    </ol>
+  </div>
+
+  <footer>
+    © 2025 Lizzy_gotuje.github.io | Królowa Miku rządzi 👑
+  </footer>
+
+  <script>
+    function showTab(id) {
+      const all = document.querySelectorAll('.card');
+      all.forEach(c => c.classList.remove('active'));
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.add('active');
+      } else {
+        console.warn('Brak karty o id:', id);
+      }
+    }
+  </script>
+</body>
+</html>
